@@ -1,0 +1,9 @@
+file: demo_access_board.rds
+file_size: 276
+pin_hash: 7eaa455f0b8ad8d0
+type: rds
+title: 'demo_access_board: a pinned 6 x 9 data frame'
+description: Edited by NHarida1
+tags: ~
+created: 20230629T124420Z
+api_version: 1

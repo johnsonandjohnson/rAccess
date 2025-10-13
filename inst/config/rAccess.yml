@@ -1,0 +1,33 @@
+module: rAccess
+parameters:
+  app_name:                 # application name *
+  board_type:               # local/rconnect/s3 *   
+  access_mode:              # default/single unit
+  unit_display:             # dropdown/switch
+  switch_size:              # default/mini/small/normal/large
+  user_df: !expr tibble::tribble(          
+    ~userid, ~username,
+    "UserID", "User Name")        # Sample user_df
+  use_rconnect_users: TRUE        # TRUE - combine rconnect userlist with user_df
+  secure_mode: FALSE              # TRUE - Access will be denied to users with no access to atleast one panel/unit
+  local_board_path:               # Path to save local pin_board when board_type = "local"    
+  s3_bucket:                      # s3 bucket name when board_type = "s3"      
+  s3_access_key:                  # s3 access key when board_type = "s3" 
+  s3_secret_key:                  # s3 secret key when board_type = "s3" 
+  verbose: FALSE                  # If TRUE Prints all data base changes in log
+
+data:                             # Study data path if available  
+  datapath1:     
+  datapath2: 
+
+panel_str:                        # Panel structure to be defined by the developer
+  - access_panel: ADMIN           # Every App should have an ADMIN panel.(mandatory)
+
+  - access_panel:                 # Access Panel name *
+    access_units:
+      - unit:                     # Access unit name  *
+      - unit:                     # Access unit name
+
+  - access_panel:                 # Access Panel name *
+    access_units:
+      - unit:

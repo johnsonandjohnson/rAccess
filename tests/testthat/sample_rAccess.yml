@@ -1,0 +1,34 @@
+module: rAccess
+parameters:
+  app_name: demoApp                
+  board_type: local                  
+  access_mode: default             
+  unit_display: 'dropdown'      
+  switch_size: 
+  user_df: !expr tibble::tribble(                   
+    ~userid, ~username,
+    "UserID1", "User Name",
+    "UserID2", "User Name")
+  use_rconnect_users: TRUE
+  secure_mode: FALSE 
+  local_board_path:               
+  s3_bucket:                      
+  s3_access_key:                  
+  s3_secret_key:                  
+  verbose: FALSE
+
+data:
+  datapath1:     
+  datapath2: 
+
+panel_str:              
+  - access_panel: ADMIN 
+
+  - access_panel: sum
+    access_units:
+      - unit: plot 
+      - unit: summary
+
+  - access_panel: data
+    access_units:
+      - unit: view    

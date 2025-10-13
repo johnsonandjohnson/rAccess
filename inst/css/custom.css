@@ -1,0 +1,225 @@
+#iam1-txtUsername_search{
+    height:3.5rem;
+
+}
+.img-20px {
+    width: 24px;
+}
+.img-30px {
+    width: 30px;
+}
+
+.img-10px{
+   width: 17px;
+  height: 17px;
+}
+
+.img-18px{
+  width: 14px;
+  height: 14px;
+}
+
+.img-23px{
+   width: 23px;
+  height: 23px;
+}
+.img-25px{
+  width: 25px;
+  height: 25px;
+}
+
+.d-inline-block {
+    display: inline-block!important
+}
+
+.font-weight-bold {
+    font-weight: 700!important
+}
+
+.pr-2,.px-2 {
+    padding-right: .5rem!important
+}
+
+.pl-0,.px-0 {
+    padding-left: 0!important
+}
+
+.pr-0,.px-0 {
+    padding-right: 0!important
+}
+
+.pt-2,.py-2 {
+    padding-top: .5rem!important
+}
+.pr-0,.px-0 {
+    padding-right: 0!important
+}
+
+.pl-0,.px-0 {
+    padding-left: 0!important
+}
+
+.mr-1,.mx-1 {
+    margin-right: .25rem!important
+}
+
+/*
+#iam-btnRefreshAcess:not([style*=display]) + [id*=-tabIAM] .nav-tabs.nav-justified {
+    width: 94%;
+    border-bottom: 0;
+    margin-left: 60px;
+}
+*/
+
+#iam-addaccessList {
+  width: 100% !important;
+  font-size: 0px;
+  max-height: 20rem;
+  border: 1px solid #ccc;
+  padding: 1.5rem 1rem;
+  overflow: auto;
+  height: 19rem !important;
+  background: #fbfbfb;
+}
+
+#iam-addAccess {
+  width: 100% !important;
+  font-size: 0px;
+  max-height: 20rem;
+  border: 1px solid #ccc;
+  padding: 1.5rem 1rem;
+  overflow: auto;
+  height: 19rem !important;
+  background: #fbfbfb;
+}
+
+/*------------------Janssen-Themes------------------*/
+
+.skin-red
+  .bootstrap-switch
+  .bootstrap-switch-handle-off.bootstrap-switch-primary,
+.skin-red
+  .bootstrap-switch
+  .bootstrap-switch-handle-on.bootstrap-switch-primary {
+  color: #fff;
+  background: linear-gradient(90deg, #f37820 0%, #6f2e38 100%);
+}
+
+.skin-blue
+  .bootstrap-switch
+  .bootstrap-switch-handle-off.bootstrap-switch-primary,
+.skin-blue
+  .bootstrap-switch
+  .bootstrap-switch-handle-on.bootstrap-switch-primary {
+  color: #fff;
+  background: linear-gradient(90deg, #1C75BC 0%, #00A0df 100%);
+}
+
+.skin-purple
+  .bootstrap-switch
+  .bootstrap-switch-handle-off.bootstrap-switch-primary,
+.skin-purple
+  .bootstrap-switch
+  .bootstrap-switch-handle-on.bootstrap-switch-primary {
+  color: #fff;
+  background: linear-gradient(90deg, #7E2E7A 0%, #1C75BC 100%);
+}
+
+.skin-green
+  .bootstrap-switch
+  .bootstrap-switch-handle-off.bootstrap-switch-primary,
+.skin-green
+  .bootstrap-switch
+  .bootstrap-switch-handle-on.bootstrap-switch-primary {
+  color: #fff;
+  background: linear-gradient(90deg, #359942 0%, #6ebd44 100%);
+}
+ .bootstrap-switch
+  .bootstrap-switch-handle-on.bootstrap-switch-primary{
+    width:115px !important ;
+  }
+
+  .skin-green-light
+    .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary {
+    color: #fff;
+    background: linear-gradient(90deg, #359942 0%, #6ebd44 100%);
+  }
+   .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary{
+      width:115px !important ;
+    }
+    
+    .skin-red-light
+    .bootstrap-switch
+    .bootstrap-switch-handle-off.bootstrap-switch-primary,
+  .skin-red-light
+    .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary {
+    color: #fff;
+    background: linear-gradient(90deg, #f37820 0%, #6f2e38 100%);
+  }
+   .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary{
+      width:115px !important ;
+    }
+    
+    .skin-blue-light
+    .bootstrap-switch
+    .bootstrap-switch-handle-off.bootstrap-switch-primary,
+  .skin-blue-light
+    .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary {
+    color: #fff;
+    background: linear-gradient(90deg, #1c75bc 0%, #00A0df 100%);
+  }
+   .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary{
+      width:115px !important ;
+    }
+    
+    .skin-purple-light
+    .bootstrap-switch
+    .bootstrap-switch-handle-off.bootstrap-switch-primary,
+  .skin-purple-light
+    .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary {
+    color: #fff;
+    background: linear-gradient(90deg, #7E2E7A 0%, #1C75BC 100%);
+  }
+   .bootstrap-switch
+    .bootstrap-switch-handle-on.bootstrap-switch-primary{
+      width:115px !important ;
+    }
+
+.modal-dialog {
+  min-width: 640px !important;
+}
+
+.invalid, .valid {
+    display: inline-block;
+    float: left;
+    padding-left: 2rem;
+    color: #ef5350;
+    text-transform: capitalize;
+}
+
+.valid {
+    color: #2e7d32;
+}
+
+[id*=UIbtneditUsrSubmit] {
+    display: inline-block;
+}
+
+/* for alligning the datatable header when using scrollX=TRUE*/
+
+.rAccess-table
+.dataTables_scrollHeadInner{
+    width: 100% !important; 
+} 
+
+.rAccess-table
+.dataTables_scrollHeadInner table{
+    width: 100% !important; 
+}
