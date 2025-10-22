@@ -3,7 +3,7 @@ pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   Tutorial: Tutorial.html
-last_built: 2025-10-13T13:15Z
+last_built: 2025-10-22T20:46Z
 urls:
   reference: https://johnsonandjohnson.github.io/rAccess/reference
   article: https://johnsonandjohnson.github.io/rAccess/articles
