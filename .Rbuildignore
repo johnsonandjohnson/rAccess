@@ -10,3 +10,4 @@
 ^rsconnect$
 ^lint_results\.txt$
 ^\.github$
+^badges$

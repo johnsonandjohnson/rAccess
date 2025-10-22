@@ -1,5 +1,6 @@
 # rAccess <img src= "man/figures/raccess.png" align="right" height="200" style="float:right; height:100px;">
 
+[![Test coverage](https://raw.githubusercontent.com/USER/REPO/coverage/badges/coverage.svg)](https://github.com/USER/REPO/actions/workflows/test-coverage.yaml)
 
 `rAccess`  is an R package that offers a flexible framework for 
 in-app access control, allowing local and/or remote storage, organization, and 
