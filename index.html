@@ -43,6 +43,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/johnsonandjohnson/rAccess/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -53,7 +54,7 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="raccess-">rAccess <img src="reference/figures/raccess.png" align="right" height="200" style="float:right; height:100px;"><a class="anchor" aria-label="anchor" href="#raccess-"></a>
 </h1></div>
-<p><a href="https://github.com/johnsonandjohnson/rAccess/actions/workflows/test-coverage.yaml" class="external-link"><img src="https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/badges/coverage.svg" alt="Test coverage"></a></p>
+<p><a href="https://github.com/johnsonandjohnson/rAccess/actions/workflows/test-coverage.yaml" class="external-link"><img src="https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/badges/coverage.svg" alt="Test coverage"></a> <!-- badges: start --> <a href="https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <!-- badges: end --> <!-- badges: start --> <a href="https://app.codecov.io/gh/johnsonandjohnson/rAccess" class="external-link"><img src="https://codecov.io/gh/johnsonandjohnson/rAccess/graph/badge.svg" alt="Codecov test coverage"></a> <!-- badges: end --></p>
 <p><code>rAccess</code> is an R package that offers a flexible framework for in-app access control, allowing local and/or remote storage, organization, and retrieval of access lists. It features a pluggable shiny module to create and manage access lists for individual Shiny applications. It is built on top of the Posit Connect Access Management, which means no credentials are collected or stored.</p>
 <p>A friendly user interface enables the app Admin to easily manage user access permission for respective access units.</p>
 <p>The parameters to the <code>rAccess</code> object can either be passed directly as arguments to the new instance of <code>rAccess</code> or could be defined within a configuration yaml file.</p>
@@ -95,7 +96,7 @@ parameters:
   s3_bucket:                      # s3 bucket name when board_type = "s3"
   s3_access_key:                  # s3 access key when board_type = "s3"
   s3_secret_key:                  # s3 secret key when board_type = "s3"
-  verbose: FALSE                  # If TRUE Prints all data base changes in log
+  verbose: FALSE                  # If TRUE prints all updates in the log
 
 data:                             # Study data path if available
   datapath1:
@@ -331,7 +332,14 @@ panel_str:                        # Panel structure to be defined by the develop
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-  </main><aside class="col-md-3"><div class="license">
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/johnsonandjohnson/rAccess/" class="external-link">Browse source code</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>Apache License (&gt;= 2)</li>
