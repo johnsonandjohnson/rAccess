@@ -1,7 +1,13 @@
 # rAccess <img src= "man/figures/raccess.png" align="right" height="200" style="float:right; height:100px;">
 
 [![Test coverage](https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/badges/coverage.svg)](https://github.com/johnsonandjohnson/rAccess/actions/workflows/test-coverage.yaml)
-
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+<!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/johnsonandjohnson/rAccess/graph/badge.svg)](https://app.codecov.io/gh/johnsonandjohnson/rAccess)
+<!-- badges: end -->
+  
 `rAccess`  is an R package that offers a flexible framework for 
 in-app access control, allowing local and/or remote storage, organization, and 
 retrieval of access lists. It features a pluggable shiny module to create and 
@@ -59,7 +65,7 @@ parameters:
   s3_bucket:                      # s3 bucket name when board_type = "s3"      
   s3_access_key:                  # s3 access key when board_type = "s3" 
   s3_secret_key:                  # s3 secret key when board_type = "s3" 
-  verbose: FALSE                  # If TRUE Prints all data base changes in log
+  verbose: FALSE                  # If TRUE prints all updates in the log
 
 data:                             # Study data path if available  
   datapath1:     
