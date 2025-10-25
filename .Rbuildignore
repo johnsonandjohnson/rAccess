@@ -1,5 +1,6 @@
 ^rAccess\.Rproj$
 ^\.Rproj\.user$
+LICENSE
 ^LICENSE\.md$
 ^_pkgdown\.yml$
 ^docs$

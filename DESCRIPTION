@@ -1,11 +1,11 @@
 Package: rAccess
-Title: An R package with Access Control module
+Title: An R Package with Access Control Module
 Version: 0.1.1.1
 Authors@R: 
     c(person(given = "Peyman",
            family = "Eshghi",
            role = c("aut", "cre"),
-           email = "PEshghi@its.jnj.com"),
+           email = "peymaan.es@gmail.com"),
     person(given = "Nandu",
            family = "Krishnan",
            role = c("aut")),
@@ -18,7 +18,7 @@ Authors@R:
     person("Johnson & Johnson Innovative Medicine", 
            role = c("cph", "fnd"))
            )
-Description: rAccess is an R package with functions and modules to support
+Description: This is an R package with functions and modules to support
     access control in Shiny apps.
 License: Apache License (>= 2)
 Encoding: UTF-8
@@ -49,4 +49,4 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-URL: https://johnsonandjohnson.github.io/rAccess, https://github.com/johnsonandjohnson/rAccess
+URL: https://johnsonandjohnson.github.io/rAccess/, https://github.com/johnsonandjohnson/rAccess/
