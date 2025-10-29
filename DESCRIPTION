@@ -21,10 +21,10 @@ Authors@R:
            )
 Description: Provides a flexible framework for implementing hierarchical access 
     control in 'shiny' applications. Features include user permission management 
-    through a two-tier system of access panels and units, pluggable 'shiny' module 
-    for administrative interfaces, and support for multiple storage backends 
-    (local, 'AWS S3', 'Posit Connect'). The system enables fine-grained control over 
-    application features and data access, with built-in audit trails and user 
+    through a two-tier system of access panels and units, pluggable 'shiny' 
+    module for administrative interfaces, and support for multiple storage 
+    backends (local, 'AWS S3', 'Posit Connect'). The system enables fine-grained
+    control over application features, with built-in audit trails and user 
     management capabilities. Integrates seamlessly with 'Posit Connect's 
     authentication system.
 License: Apache License (>= 2)
