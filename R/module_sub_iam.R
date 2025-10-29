@@ -554,7 +554,7 @@ module_sub_iam_server <- function(id, access_panel_id, rAccess_obj) {
         access_units <- colnames(access_df)[-c(1:2)]
         editrowidx <- reactive_vals$editrow
         edit_accesslist_ <- tagList()
-        print(paste0("editrow: ", editrowidx))
+        message(paste0("editrow: ", editrowidx))
         if (rAccess_obj$unit_display == "dropdown") {
           if (editrowidx %in% rownames(access_df)) {
             editrow <- access_df[editrowidx, , drop = FALSE]
@@ -935,7 +935,7 @@ module_sub_iam_server <- function(id, access_panel_id, rAccess_obj) {
             "ADMIN Panel cannot be empty!!", br(),
             "Please add another Admin to remove this user"
           )
-          print(reactive_vals$rdelAdminAlert)
+          message(reactive_vals$rdelAdminAlert)
         } else {
           reactive_vals$rdelUsrInfoAlert <- tags$span("")
           reactive_vals$rdelUsrAlert <- tags$span("")

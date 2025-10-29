@@ -1,11 +1,12 @@
 Package: rAccess
-Title: An R Package with Access Control Module
-Version: 0.1.1.1
+Title: Access Control Module for 'shiny' Applications
+Version: 0.1.1.2
 Authors@R: 
     c(person(given = "Peyman",
            family = "Eshghi",
            role = c("aut", "cre"),
-           email = "peymaan.es@gmail.com"),
+           email = "peymaan.es@gmail.com",
+           comment = c(ORCID = "0000-0003-1613-2705")),
     person(given = "Nandu",
            family = "Krishnan",
            role = c("aut")),
@@ -18,8 +19,14 @@ Authors@R:
     person("Johnson & Johnson Innovative Medicine", 
            role = c("cph", "fnd"))
            )
-Description: This is an R package with functions and modules to support
-    access control in Shiny apps.
+Description: Provides a flexible framework for implementing hierarchical access 
+    control in 'shiny' applications. Features include user permission management 
+    through a two-tier system of access panels and units, pluggable 'shiny' module 
+    for administrative interfaces, and support for multiple storage backends 
+    (local, 'AWS S3', 'Posit Connect'). The system enables fine-grained control over 
+    application features and data access, with built-in audit trails and user 
+    management capabilities. Integrates seamlessly with 'Posit Connect's 
+    authentication system.
 License: Apache License (>= 2)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -50,3 +57,4 @@ Suggests:
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 URL: https://johnsonandjohnson.github.io/rAccess/, https://github.com/johnsonandjohnson/rAccess/
+BugReports: https://github.com/johnsonandjohnson/rAccess/issues/
