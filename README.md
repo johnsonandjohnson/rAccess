@@ -5,7 +5,7 @@
 [![R-CMD-check](https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 <!-- badges: start -->
-[![Codecov test coverage](https://codecov.io/gh/johnsonandjohnson/rAccess/graph/badge.svg)](https://app.codecov.io/gh/johnsonandjohnson/rAccess)
+[![CRAN Version](https://www.r-pkg.org/badges/version/rAccess?color=green)](https://cran.r-project.org/package=rAccess)
 <!-- badges: end -->
   
 `rAccess`  is an R package that offers a flexible framework for 
