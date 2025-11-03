@@ -295,7 +295,7 @@ module_sub_iam_server <- function(id, access_panel_id, rAccess_obj) {
               }
             } else {
               rconnect_choices_ <- rAccess::get_user_api(
-                contactInfo = username_,
+                contact_info = username_,
                 url = session$clientData$url_hostname,
                 api_key = NULL
               )

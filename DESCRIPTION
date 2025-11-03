@@ -1,6 +1,6 @@
 Package: rAccess
 Title: Access Control Module for 'shiny' Applications
-Version: 0.1.1.2
+Version: 0.1.1.299
 Authors@R: 
     c(person(given = "Peyman",
            family = "Eshghi",
