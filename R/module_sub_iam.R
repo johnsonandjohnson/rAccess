@@ -287,30 +287,26 @@ module_sub_iam_server <- function(id, access_panel_id, rAccess_obj) {
         username_ <- input$txtUsername
         if (nchar(trimws(username_)) >= 1) {
           withProgress(message = "Fetching list of users...", {
-            if (Sys.getenv("SHINY_PORT") == "") {
-              if (!is.null(rAccess_obj$user_df)) {
-                choices_ <- rAccess_obj$matched_users(username_)
-              } else {
-                choices_ <- NULL
-              }
+            if (!is.null(rAccess_obj$user_df)) {
+              choices_ <- rAccess_obj$matched_users(username_)
             } else {
-              rconnect_choices_ <- rAccess::get_user_api(
-                contact_info = username_,
-                url = session$clientData$url_hostname,
-                api_key = NULL
-              )
-              if (!is.null(rAccess_obj$user_df)) {
-                userdf_choices_ <- rAccess_obj$matched_users(username_)
-              } else {
-                userdf_choices_ <- NULL
-              }
+              choices_ <- NULL
+            }
+            userdf_choices_ <- choices_
+            if (Sys.getenv("SHINY_PORT") != "") {
               if (rAccess_obj$use_rconnect_users) {
-                choices_ <- unique(rbind(rconnect_choices_, userdf_choices_))
+                rconnect_choices_ <- rAccess::get_user_api(
+                  contact_info = username_,
+                  url = session$clientData$url_hostname,
+                  api_key = NULL
+                )
+                choices_ <- rbind(rconnect_choices_, userdf_choices_)
               } else {
                 choices_ <- userdf_choices_
               }
             }
             if (!is.null(choices_)) {
+              choices_ <- choices_[!duplicated(tolower(choices_$userid)), ]
               choices_temp <- choices_$userid
               names(choices_temp) <- paste0(choices_$userid,
                                             " (", choices_$username, ")")

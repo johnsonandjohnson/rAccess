@@ -310,6 +310,7 @@ rAccess <- R6Class(
       self$s3_bucket <- s3_bucket
       self$s3_access_key <- s3_access_key
       self$s3_secret_key <- s3_secret_key
+      self$use_rconnect_users <- use_rconnect_users
       self$verbose <- verbose
       self$user <- user
       self$secure_mode <- secure_mode
