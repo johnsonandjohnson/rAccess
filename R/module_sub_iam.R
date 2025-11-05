@@ -300,12 +300,13 @@ module_sub_iam_server <- function(id, access_panel_id, rAccess_obj) {
                   url = session$clientData$url_hostname,
                   api_key = NULL
                 )
-                choices_ <- unique(rbind(rconnect_choices_, userdf_choices_))
+                choices_ <- rbind(rconnect_choices_, userdf_choices_)
               } else {
                 choices_ <- userdf_choices_
               }
             }
             if (!is.null(choices_)) {
+              choices_ <- choices_[!duplicated(tolower(choices_$userid)), ]
               choices_temp <- choices_$userid
               names(choices_temp) <- paste0(choices_$userid,
                                             " (", choices_$username, ")")
