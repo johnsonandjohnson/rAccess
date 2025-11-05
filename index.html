@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">rAccess</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1.299</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,7 @@
 <li><a class="dropdown-item" href="articles/Tutorial.html">Tutorial</a></li>
   </ul>
 </li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
@@ -54,10 +55,18 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="raccess-">rAccess <img src="reference/figures/raccess.png" align="right" height="200" style="float:right; height:100px;"><a class="anchor" aria-label="anchor" href="#raccess-"></a>
 </h1></div>
-<p><a href="https://github.com/johnsonandjohnson/rAccess/actions/workflows/test-coverage.yaml" class="external-link"><img src="https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/badges/coverage.svg" alt="Test coverage"></a> <!-- badges: start --> <a href="https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <!-- badges: end --> <!-- badges: start --> <a href="https://cran.r-project.org/package=rAccess" class="external-link"><img src="https://www.r-pkg.org/badges/version/rAccess?color=green" alt="CRAN Version"></a> <!-- badges: end --></p>
+<!-- badges: start -->
+
+<!-- badges: end -->
 <p><code>rAccess</code> is an R package that offers a flexible framework for in-app access control, allowing local and/or remote storage, organization, and retrieval of access lists. It features a pluggable shiny module to create and manage access lists for individual Shiny applications. It is built on top of the Posit Connect Access Management, which means no credentials are collected or stored.</p>
 <p>A friendly user interface enables the app Admin to easily manage user access permission for respective access units.</p>
 <p>The parameters to the <code>rAccess</code> object can either be passed directly as arguments to the new instance of <code>rAccess</code> or could be defined within a configuration yaml file.</p>
+<div class="section level2">
+<h2 id="core-concepts">Core Concepts<a class="anchor" aria-label="anchor" href="#core-concepts"></a>
+</h2>
+<p><strong>Access Panels</strong> serve as organizational containers that group related <em>Access Units</em> together, enabling you to implement hierarchical access control structures. In the rAccess user interface, each <em>Access Panel</em> appears as a separate tab where administrators can navigate to configure permissions. This tabbed structure allows admins to logically organize access controls by functional areas - for example, having separate panels for “Data Visualization”, “Report Generation”, and “Administrative Functions”. Each panel can contain multiple related units that share similar access requirements or belong to the same feature set.</p>
+<p><strong>Access Units</strong> represent the most granular level of access control in your application - these are the specific elements that users can be granted or denied access to. They could be individual shiny modules, specific UI components (like download buttons or input panels), particular data views, or any discrete functionality within your application. In the rAccess user interface, <em>Access Units</em> appear as individual toggles or dropdown selections within their respective <em>Access Panel</em> tabs, allowing administrators to precisely control which users can access each specific feature or component of the application.</p>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -116,7 +125,12 @@ panel_str:                        # Panel structure to be defined by the develop
         data:                     # datapath associated with access unit
       - unit:
         data:                     # datapath associated with access unit</code></pre>
-<p><strong>For detailed description on the config file components refer vignette : Tutorial.</strong></p>
+<dl>
+<dt>**For detailed description on the config file components refer vignette</dt>
+<dd>
+Tutorial.**
+</dd>
+</dl>
 <div class="section level3">
 <h3 id="creating-a-new-instance-of-raccess">Creating a new instance of rAccess<a class="anchor" aria-label="anchor" href="#creating-a-new-instance-of-raccess"></a>
 </h3>
@@ -330,6 +344,9 @@ panel_str:                        # Panel structure to be defined by the develop
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre>
+<div class="float">
+<img src="reference/figures/readme_rAccess.gif" alt="App recording"><div class="figcaption">App recording</div>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -367,7 +384,14 @@ panel_str:                        # Panel structure to be defined by the develop
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/johnsonandjohnson/rAccess/actions/workflows/test-coverage.yaml" class="external-link"><img src="https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/badges/coverage.svg" alt="Test coverage"></a></li>
+<li><a href="https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://cran.r-project.org/package=rAccess" class="external-link"><img src="https://www.r-pkg.org/badges/version/rAccess?color=green" alt="CRAN Version"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
