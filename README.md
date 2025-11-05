@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # rAccess <img src="man/figures/raccess.png" align="right" height="200" style="float:right; height:100px;"/>
 
 <!-- badges: start -->
