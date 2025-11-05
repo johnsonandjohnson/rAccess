@@ -1,54 +1,87 @@
-# rAccess <img src= "man/figures/raccess.png" align="right" height="200" style="float:right; height:100px;">
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
-[![Test coverage](https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/badges/coverage.svg)](https://github.com/johnsonandjohnson/rAccess/actions/workflows/test-coverage.yaml)
+# rAccess <img src="man/figures/raccess.png" align="right" height="200" style="float:right; height:100px;"/>
+
 <!-- badges: start -->
+
+[![Test
+coverage](https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/badges/coverage.svg)](https://github.com/johnsonandjohnson/rAccess/actions/workflows/test-coverage.yaml)
 [![R-CMD-check](https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/johnsonandjohnson/rAccess/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
-<!-- badges: start -->
-[![CRAN Version](https://www.r-pkg.org/badges/version/rAccess?color=green)](https://cran.r-project.org/package=rAccess)
-<!-- badges: end -->
-  
-`rAccess`  is an R package that offers a flexible framework for 
-in-app access control, allowing local and/or remote storage, organization, and 
-retrieval of access lists. It features a pluggable shiny module to create and 
-manage access lists for individual Shiny applications. It is built on top of the 
-Posit Connect Access Management, which means no credentials are collected or stored. 
+[![CRAN
+Version](https://www.r-pkg.org/badges/version/rAccess?color=green)](https://cran.r-project.org/package=rAccess)
 
-A friendly user interface enables the app Admin to easily manage user access
-permission for respective access units. 
+<!-- badges: end -->
 
-The parameters to the `rAccess` object can either be passed directly as arguments to the new
-instance of `rAccess` or could be defined within a  configuration yaml file. 
+`rAccess` is an R package that offers a flexible framework for in-app
+access control, allowing local and/or remote storage, organization, and
+retrieval of access lists. It features a pluggable shiny module to
+create and manage access lists for individual Shiny applications. It is
+built on top of the Posit Connect Access Management, which means no
+credentials are collected or stored.
+
+A friendly user interface enables the app Admin to easily manage user
+access permission for respective access units.
+
+The parameters to the `rAccess` object can either be passed directly as
+arguments to the new instance of `rAccess` or could be defined within a
+configuration yaml file.
+
+## Core Concepts
+
+**Access Panels** serve as organizational containers that group related *Access 
+Units* together, enabling you to implement hierarchical access control 
+structures. In the rAccess user interface, each *Access Panel* appears as a 
+separate tab where administrators can navigate to configure permissions. This 
+tabbed structure allows admins to logically organize access controls by 
+functional areas - for example, having separate panels for "Data Visualization",
+ "Report Generation", and "Administrative Functions". Each panel can contain
+  multiple related units that share similar access requirements or belong to 
+the same feature set.
+
+**Access Units** represent the most granular level of access control in your 
+application - these are the specific elements that users can be granted or denied 
+access to. They could be individual shiny modules, specific UI components (like 
+download buttons or input panels), particular data views, or any discrete 
+functionality within your application. In the rAccess user interface, *Access 
+Units* appear as individual toggles or dropdown selections within their 
+respective *Access Panel* tabs, allowing administrators to precisely control which
+ users can access each specific feature or component of the application.
 
 ## Installation
 
-```
+```         
 #install.packages("pak")
 pak::pak("johnsonandjohnson/rAccess")
 ```
 
 ## Usage
 
-`rAccess` includes server and ui modules for access management tab which could 
-be used within a main Shiny web application.
+`rAccess` includes server and ui modules for access management tab which
+could be used within a main Shiny web application.
 
-```
+```         
 library(rAccess)
 ```
 
 ## Adding rAccess config file
 
-The package includes a template configuration file, making it simple for users 
-to get started. It contains all the necessary parameters for rAccess and can be 
-customized to suit individual needs. 
+The package includes a template configuration file, making it simple for
+users to get started. It contains all the necessary parameters for
+rAccess and can be customized to suit individual needs.
 
 To add a config file template to your project directory, use:
-```
+
+```         
 rAccess::use_config(file_name = "rAccess.yml")
 ```
 
 ## Config file structure
-```
+
+```         
 module: rAccess
 parameters:
   app_name:                 # application name *
@@ -87,19 +120,24 @@ panel_str:                        # Panel structure to be defined by the develop
         data:                     # datapath associated with access unit
 ```
 
-**For detailed description on the config file components refer vignette : Tutorial.**
+**For detailed description on the config file components refer vignette
+: Tutorial.**
 
 ### Creating a new instance of rAccess
-Once the configuration file is ready the user can create a new instance of 
-rAccess as below:
 
-```
+Once the configuration file is ready the user can create a new instance
+of rAccess as below:
+
+```         
 newIAM <- rAccess$new(user = "UserID", config = "rAccess.yml")
 ```
+
 ### Creating a new instance of rAccess without a config file
-If there is no config file in place, user can also pass the rAccess parameters as
-arguments to the new instance of the `rAccess` object.
-```
+
+If there is no config file in place, user can also pass the rAccess
+parameters as arguments to the new instance of the `rAccess` object.
+
+```         
 access_panels <- list(
   `ADMIN` = NULL,
   `Access Panel 1` = c("Unit 1", "Unit 2"),
@@ -126,13 +164,17 @@ newIAM$access_panels
 newIAM$access_units
 newIAM$access_mode
 ```
+
 ### board_type options in rAccess
-There three pin board options available for the users: "local", "s3", and "rconnect".
-This can be specified with the parameter `board_type` of the rAccess object. 
 
-* `"local"` : Local folder will be used as a pin_board. The user must also specify the "local_board_path".
+There three pin board options available for the users: "local", "s3",
+and "rconnect". This can be specified with the parameter `board_type` of
+the rAccess object.
 
-```
+-   `"local"` : Local folder will be used as a pin_board. The user must
+    also specify the "local_board_path".
+
+```         
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
                       board_type = "local",
@@ -143,9 +185,10 @@ newIAM <- rAccess$new(user = "<userid>",
                       user_df = user_df)
 ```
 
-* `"s3"` : S3 bucket will be used as a pin_board. When board_type is "s3", the user must give the s3 credentials.
+-   `"s3"` : S3 bucket will be used as a pin_board. When board_type is
+    "s3", the user must give the s3 credentials.
 
-```
+```         
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
                       board_type = "s3",
@@ -157,10 +200,11 @@ newIAM <- rAccess$new(user = "<userid>",
                       user_df = user_df)
 ```
 
-* `"rconnect"` : Posit Connect pin_board will be utilized. If the pin_board does not already exist, 
-it will be created and deployed on the same Posit Connect server where the app is hosted.
+-   `"rconnect"` : Posit Connect pin_board will be utilized. If the
+    pin_board does not already exist, it will be created and deployed on
+    the same Posit Connect server where the app is hosted.
 
-```
+```         
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
                       board_type = "rconnect",
@@ -170,10 +214,14 @@ newIAM <- rAccess$new(user = "<userid>",
 ```
 
 ### Creating user list
-The user list for rAccess could either be supplied as the `user_df` argument of the `rAccess` object or could be fetched from the rconnect user list.
 
-**Creating user_df***
-```
+The user list for rAccess could either be supplied as the `user_df`
+argument of the `rAccess` object or could be fetched from the rconnect
+user list.
+
+**Creating user_df**\*
+
+```         
 user_df <- tibble::tribble(
   ~userid, ~username,
   "UserId1", "User Name 1",
@@ -190,15 +238,13 @@ newIAM <- rAccess$new(user = "<userid>",
                       access_panels = access_panels,
                       access_mode = "default",
                       user_df = user_df)
-
 ```
 
-**Using API to fetch user data**
-If you have access to your organization’s user directory via an API, 
-you might want to first fetch the data and then prepare the user_df, 
-similar to the example below
+**Using API to fetch user data** If you have access to your
+organization’s user directory via an API, you might want to first fetch
+the data and then prepare the user_df, similar to the example below
 
-```
+```         
 api_url <- "<user-directory-api>"
 users <- jsonlite::fromJSON(api_url)
 user_df <- tibble::tibble(userid = users$USERID, username = users$USERNAME)
@@ -210,15 +256,15 @@ newIAM <- rAccess$new(user = "<userid>",
                       access_panels = access_panels,
                       access_mode = "default",
                       user_df = user_df)
-
 ```
 
 **Using User list from rconnect**
 
-User list will be automatically fetched from the Posit Connect servers when 
-deployed. Users must make sure that `use_rconnect_users` parameter is set as 
-`TRUE` to get users from Posit Connect.
-```
+User list will be automatically fetched from the Posit Connect servers
+when deployed. Users must make sure that `use_rconnect_users` parameter
+is set as `TRUE` to get users from Posit Connect.
+
+```         
 # When deployed
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
@@ -228,9 +274,9 @@ newIAM <- rAccess$new(user = "<userid>",
                       use_rconnect_users = TRUE)
 ```
 
-## Example 
+## Example
 
-```
+```         
 library(DT)
 library(pins)
 library(shiny)
@@ -322,3 +368,5 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+![App recording](man/figures/readme_rAccess.gif)
