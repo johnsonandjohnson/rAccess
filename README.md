@@ -8,6 +8,8 @@ coverage](https://raw.githubusercontent.com/johnsonandjohnson/rAccess/coverage/b
 [![CRAN
 Version](https://www.r-pkg.org/badges/version/rAccess?color=green)](https://cran.r-project.org/package=rAccess)
 
+[![Current Version](https://img.shields.io/github/r-package/v/johnsonandjohnson/rAccess/main?color=purple&label=package%20version)](https://github.com/johnsonandjohnson/rAccess/tree/main)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 <!-- badges: end -->
 
 `rAccess` is an R package that offers a flexible framework for in-app
@@ -47,8 +49,14 @@ respective *Access Panel* tabs, allowing administrators to precisely control whi
 
 ## Installation
 
-```         
-#install.packages("pak")
+```r
+install.packages("rAccess")
+```
+
+Alternatively, you might also use the development version.
+
+```r
+# install.packages("pak")
 pak::pak("johnsonandjohnson/rAccess")
 ```
 
@@ -57,7 +65,7 @@ pak::pak("johnsonandjohnson/rAccess")
 `rAccess` includes server and ui modules for access management tab which
 could be used within a main Shiny web application.
 
-```         
+```r         
 library(rAccess)
 ```
 
@@ -69,7 +77,7 @@ rAccess and can be customized to suit individual needs.
 
 To add a config file template to your project directory, use:
 
-```         
+```r         
 rAccess::use_config(file_name = "rAccess.yml")
 ```
 
@@ -122,7 +130,7 @@ panel_str:                        # Panel structure to be defined by the develop
 Once the configuration file is ready the user can create a new instance
 of rAccess as below:
 
-```         
+```r         
 newIAM <- rAccess$new(user = "UserID", config = "rAccess.yml")
 ```
 
@@ -131,7 +139,7 @@ newIAM <- rAccess$new(user = "UserID", config = "rAccess.yml")
 If there is no config file in place, user can also pass the rAccess
 parameters as arguments to the new instance of the `rAccess` object.
 
-```         
+```r        
 access_panels <- list(
   `ADMIN` = NULL,
   `Access Panel 1` = c("Unit 1", "Unit 2"),
@@ -168,7 +176,7 @@ the rAccess object.
 -   `"local"` : Local folder will be used as a pin_board. The user must
     also specify the "local_board_path".
 
-```         
+```r         
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
                       board_type = "local",
@@ -182,7 +190,7 @@ newIAM <- rAccess$new(user = "<userid>",
 -   `"s3"` : S3 bucket will be used as a pin_board. When board_type is
     "s3", the user must give the s3 credentials.
 
-```         
+```r         
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
                       board_type = "s3",
@@ -198,7 +206,7 @@ newIAM <- rAccess$new(user = "<userid>",
     pin_board does not already exist, it will be created and deployed on
     the same Posit Connect server where the app is hosted.
 
-```         
+```r         
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
                       board_type = "rconnect",
@@ -215,7 +223,7 @@ user list.
 
 **Creating user_df**\*
 
-```         
+```r         
 user_df <- tibble::tribble(
   ~userid, ~username,
   "UserId1", "User Name 1",
@@ -238,7 +246,7 @@ newIAM <- rAccess$new(user = "<userid>",
 organization’s user directory via an API, you might want to first fetch
 the data and then prepare the user_df, similar to the example below
 
-```         
+```r         
 api_url <- "<user-directory-api>"
 users <- jsonlite::fromJSON(api_url)
 user_df <- tibble::tibble(userid = users$USERID, username = users$USERNAME)
@@ -258,7 +266,7 @@ User list will be automatically fetched from the Posit Connect servers
 when deployed. Users must make sure that `use_rconnect_users` parameter
 is set as `TRUE` to get users from Posit Connect.
 
-```         
+```r         
 # When deployed
 newIAM <- rAccess$new(user = "<userid>",
                       app_name = "testApp",
@@ -270,7 +278,7 @@ newIAM <- rAccess$new(user = "<userid>",
 
 ## Example
 
-```         
+```r         
 library(DT)
 library(pins)
 library(shiny)
